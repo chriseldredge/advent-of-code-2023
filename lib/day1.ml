@@ -51,6 +51,21 @@ let decode line =
 let stupid_decode line =
   (find_first_number line) * 10 + (find_last_number line)
 
+let part1 =
+  let lines = Util.read_file "input/day1.txt" in
+  let decode = List.map decode lines in
+  List.fold_left (+) 0 decode
+
+let part2 =
+  let lines = Util.read_file "input/day1.txt" in
+  let decode = List.map stupid_decode lines in
+  List.fold_left (+) 0 decode;;
+
+let solve = begin
+  print_endline (string_of_int part1);
+  print_endline (string_of_int part2)
+end
+
 let%test _ = first_digit "5" = '5'
 let%test _ = first_digit "a5" = '5'
 let%test _ = first_digit "a5b7q9e" = '5'
