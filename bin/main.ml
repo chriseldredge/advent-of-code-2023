@@ -1,3 +1,3 @@
 let () = (
-  Advent_of_code_2023.Day4.solve Sys.argv.(1)
+  Advent_of_code_2023.Day6.solve Sys.argv.(1)
 )
